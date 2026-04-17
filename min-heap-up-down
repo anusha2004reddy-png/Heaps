@@ -1,0 +1,30 @@
+def heapifyDown(nums,ind):
+    smallest = ind
+    lchild = 2*ind+1
+    rchild = 2*ind+2
+    if(lchild<len(nums) and nums[lchild]<nums[smallest]):
+        smallest = lchild
+    if(rchild<len(nums) and nums[rchild]<nums[smallest]):
+        smallest = rchild
+    if(smallest!=ind):
+        nums[ind],nums[smallest] = nums[smallest],nums[ind]
+        heapifyDown(nums,smallest)
+
+def heapifyUp(nums,ind):
+    if(parent>0):
+        parent = (ind-1)//2
+        if(nums[parent]>nums[ind]):
+            nums[ind],nums[parent] = nums[parent],nums[ind]
+            heapifyUp(nums,ind)
+        
+    
+nums = [1,4,5,6,7,10,6,8]
+ind = 0
+val = 15
+if(nums[ind] < val):
+    nums[ind] = val
+    heapifyDown(nums,ind)
+if(nums[ind] > val):
+    nums[ind] = val
+    heapifyUp(nums,ind)
+print(nums)
