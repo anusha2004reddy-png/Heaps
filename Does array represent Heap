@@ -1,0 +1,19 @@
+class Solution:
+    def isMaxHeap(self, arr, n):
+        def heapifyDown(ind):
+            largest = ind
+            lchild = 2*ind+1
+            rchild = 2*ind+2
+            if(lchild<n and arr[lchild]>arr[largest]):
+                return False
+            if(rchild<n and arr[rchild]>arr[largest]):
+                return False
+            return True
+        for ind in range(0,n//2):
+            if not heapifyDown(ind):
+                return False
+            return True
+arr=[90,15,10,7,12,2]
+n=len(arr)
+ob=Solution()
+print(ob.isMaxHeap(arr,n))
