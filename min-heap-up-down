@@ -11,11 +11,11 @@ def heapifyDown(nums,ind):
         heapifyDown(nums,smallest)
 
 def heapifyUp(nums,ind):
-    if(parent>0):
+    if(ind>0):
         parent = (ind-1)//2
         if(nums[parent]>nums[ind]):
             nums[ind],nums[parent] = nums[parent],nums[ind]
-            heapifyUp(nums,ind)
+            heapifyUp(nums,parent)
         
     
 nums = [1,4,5,6,7,10,6,8]
