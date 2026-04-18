@@ -15,7 +15,7 @@ def heapifyUp(nums,ind):
         parent = (ind-1)//2
         if(num[ind]>nums[parent]):
             nums[parent],nums[ind] = nums[ind],nums[parent]
-            heapifyUp(nums,ind)
+            heapifyUp(nums,parent)
 
 nums = [10,7,6,4,5,4,5,3,2]
 ind = 0
